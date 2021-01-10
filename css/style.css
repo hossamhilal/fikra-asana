@@ -226,6 +226,43 @@ header {
     }
 }
 
+@media screen and (max-width:768px) {
+    header {
+        padding: 20px 0;
+    }
+    
+    .headerNav {
+        margin-bottom: 40px;
+    }
+    
+    .social a {
+        width: 25px;
+        height: 25px;
+        font-size: 13px;
+    }
+    
+    .logo {
+        max-width: 110px;
+    }
+    
+    .headerData h1 {
+        font-size: 30px;
+    }
+    
+    .headerData h3 {
+        font-size: 18px;
+    }
+    
+    .headerData p {
+        font-size: 15px;
+    }
+    
+    .vectors img {
+        max-width: 300px;
+        margin-top: 30px;
+    }
+}
+
 
 
 /*==========================||---------------------------||========================*/
@@ -268,6 +305,35 @@ header {
     color: var(--mainColor);
 }
 
+@media screen and (max-width:768px) {
+    .secPadding {
+        padding: 30px 0;
+    }
+    
+    .aboutVector {
+        margin-bottom: 20px;
+    }
+    
+    .aboutContent {
+        padding: 0;
+    }
+    
+    .about h2 {
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+    
+    .about p {
+        font-size: 15px;
+        line-height: 25px;
+        margin-bottom: 10px;
+    }
+    
+    .about li {
+        font-size: 15px;
+        line-height: 25px;
+    }
+}
 
 /*==========================||---------------------------||========================*/
 /*==========================||           Services        ||========================*/
@@ -287,7 +353,7 @@ header {
 
 .service {
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .serviceVector {
@@ -324,7 +390,25 @@ header {
     transform: scale(1.1);
 }
 
-
+@media screen and (max-width:768px) {
+    .serviceVector {
+        height: 200px;
+    }
+    
+    .serviceBody {
+        padding: 15px;
+    }
+    
+    .service h2 {
+        font-size: 22px;
+        margin-bottom: 3px;
+    }
+    
+    .service p {
+        font-size: 15px;
+        line-height: 25px;
+    }    
+}
 
 /*==========================||---------------------------||========================*/
 /*==========================||         Portfolio         ||========================*/
@@ -400,6 +484,21 @@ header {
     transform: translateY(0);
 }
 
+@media screen and (max-width:768px) {
+    .portfolioBox {
+        height: 250px;
+        margin-bottom: 15px;
+    }
+    
+    .portfolioBox h3 {
+        font-size: 18px;
+    }
+    
+    .portfolioBox h5 {
+        font-size: 13px;
+    }
+}
+
 /*==========================||---------------------------||========================*/
 /*==========================||           Contact         ||========================*/
 /*==========================||---------------------------||========================*/
@@ -420,7 +519,6 @@ header {
     line-height: 30px;
     margin-bottom: 15px;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -494,18 +592,41 @@ header {
 }
 
 .textareaField {
-    height: 130px;
+    height: 160px;
 }
 
 .textareaField textarea {
     padding: 15px;
-    height: 130px;
+    height: 160px;
     resize: none;
 }
 
 .fieldInput:focus::placeholder {
     opacity: 0;
     transition: all .5s ease-in-out;
+}
+
+@media screen and (max-width:768px) {
+    .contact h2 {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+    
+    .contact p {
+        font-size: 15px;
+    }
+    
+    .contact li {
+        font-size: 15px;
+    }
+    
+    .contact ul {
+        margin-bottom: 30px;
+    }
+    
+    .field {
+        margin-bottom: 18px;
+    }
 }
 
 /*==========================||---------------------------||========================*/
@@ -643,6 +764,32 @@ footer .social a {
     color: var(--mainColor);
 }
 
+@media screen and (max-width:768px) {
+    footer {
+        padding: 30px 0 20px;
+    }
+    
+    footer p {
+        font-size: 15px;
+        line-height: 25px;
+    }
+    
+    footer h2 {
+        margin: 15px 0;
+    }
+    
+    .footerContact li {
+        font-size: 15px;
+    }
+    
+    .footerContact label {
+        font-size: 15px;
+    }
+
+    .copyright p {
+        font-size: 15px;
+    }
+}
 
 /*==========================||---------------------------||========================*/
 /*==========================||            Twitter        ||========================*/
@@ -771,6 +918,13 @@ footer .social a {
     }
 }
 
+@media screen and (max-width:768px) {
+    .scrollTop {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+}
 
 /*==========================||---------------------------||========================*/
 /*==========================||            Loader        ||========================*/

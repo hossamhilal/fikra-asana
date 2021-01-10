@@ -36,7 +36,7 @@
             var newContent = '';
 
             // Go through all characters of the sentence
-            var x = .05;
+            var x = 0.1;
             for (let i = 0; i < $sentence.text().length; i++) {
                 var substring = $sentence.text().substr(i, 1);
 
