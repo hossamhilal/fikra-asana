@@ -1,5 +1,5 @@
 /*global $ */
-(function($) {
+(function ($) {
     "use strict";
 
     // $(window).on('load', function(){
@@ -10,175 +10,54 @@
     //     }); 
     // });
 
-    // // OPEN SIDE  MENU 
-    // $('.menuBtn').on('click', function(){
-    //     $('.navMenu').toggleClass('show');
-    //     $('.navOverlay').addClass('show');  
-    //     setTimeout(function(){
-    //         $('body').addClass('stopScroll');
-    //     }, 200); 
-    // });
+    // INPUT FOCUS ANIMATION 
+    $('.fieldInput').focus(function () {
+        $(this).parent('.field').addClass('focused');
+    });
 
-    // CLOSE SIDE MENU 
-    // $('.navOverlay').on('click', function(){
-    //     $(this).removeClass('show');
-    //     $('.navMenu').removeClass('show');  
-    //     $('body').removeClass('stopScroll');  
-    // });
+    $('.fieldInput').each(function () {
+        if ($(this).val() != "") {
+            $(this).parent('.field').addClass('focused');
+        }
+    });
 
-    // //  Open DropDown
-    // $('.dropToggle').on('click', function(e){
-    //     e.preventDefault();
-    //     e.stopPropagation();
-    //     if($(this).next('.dropDown').hasClass('open')){
-    //         $('.dropDown').removeClass('open');
-    //     } else {
-    //         $('.dropDown').removeClass('open');
-    //         $(this).next('.dropDown').toggleClass('open');
-    //     } 
-    // });
+    $('.fieldInput').focusout(function () {
+        if ($(this).val() === "")
+            $(this).parent('.field').removeClass('focused');
+    });
 
-    //  Close DropDown
-    // $(document).on('click', function(){
-    //     $('.dropDown').removeClass('open');
-    // });
+    // Go through a sentence, wrap its characters with spans
+    function setUpCharacters() {
+        var $sentences = $('.headerData h1');
 
-    
-    // Header OWL 
-    // let owlHeader = $('.owlHeader');
-    // owlHeader.owlCarousel({
-    //     margin: 0,
-    //     autoplay: true,
-    //     loop: true,
-    //     nav: true,
-    //     dots: true,
-    //     autoplaySpeed : 5000,
-    //     autoplayTimeout : 5000,
-    //     smartSpeed: 5000 ,
-    //     navText: ["<i class='icofont-thin-right'></i>", "<i class='icofont-thin-left'></i>"],
-    //     responsive: {
-    //         0: {
-    //             items: 1,
-    //             dotsEach: 1
-    //         },
-    //         600: {
-    //             items: 1,
-    //             dotsEach: 1
-    //         },
-    //         1000: {
-    //             items: 1,
-    //             dotsEach: 1
-    //         }
-    //     }
-    // });
-    // $('.owlHeader .owl-dot').each(function () {
-    //     $(this).children('span').text('0' + ($(this).index() + 1));
-    // });   
-    // owlHeader.on('mousewheel', '.owl-stage', function (e) {
-    //     if (e.deltaY > 0) {
-    //         owlHeader.trigger('next.owl');
-    //     } else {
-    //         owlHeader.trigger('prev.owl');
-    //     }
-    //     e.preventDefault();
-    // });
+        // Run for each sentence
+        $sentences.each(function () {
+            var $sentence = $(this);
+            var newContent = '';
 
-    // Testimonials OWL 
-    // $('.owlTestimonials').owlCarousel({
-    //     margin: 20,
-    //     autoplay: true,
-    //     loop: false,
-    //     nav: true,
-    //     dots: false,
-    //     center : false ,
-    //     autoplaySpeed : 5000,
-    //     autoplayTimeout : 5000,
-    //     smartSpeed: 5000 ,
-    //     navText: ["<i class='icofont-thin-right'></i>", "<i class='icofont-thin-left'></i>"],
-    //     responsive: {
-    //         0: {
-    //             items: 1
-    //         },
-    //         600: {
-    //             items: 2
-    //         },
-    //         1000: {
-    //             items: 2
-    //         }
-    //     }
-    // });
+            // Go through all characters of the sentence
+            var x = .05;
+            for (let i = 0; i < $sentence.text().length; i++) {
+                var substring = $sentence.text().substr(i, 1);
 
-    // Partners OWL 
-    // $('.owlPartners').owlCarousel({
-    //     margin: 20,
-    //     autoplay: true,
-    //     loop: true,
-    //     nav: false,
-    //     dots: false,
-    //     center : false ,
-    //     autoplaySpeed : 5000,
-    //     autoplayTimeout : 5000,
-    //     smartSpeed: 5000 ,
-    //     navText: ["<i class='icofont-thin-right'></i>", "<i class='icofont-thin-left'></i>"],
-    //     responsive: {
-    //         0: {
-    //             items: 1
-    //         },
-    //         600: {
-    //             items: 3
-    //         },
-    //         1000: {
-    //             items: 4
-    //         }
-    //     }
-    // });
+                // If we have a character, wrap it
+                if (substring != " ") {
+                    newContent += '<span style="animation-delay:'+x+'s">' + substring + '</span>';
+                    x = x + 0.05;
+                } else {
+                    newContent += substring;
+                }
+            }
 
-    // Clients OWL 
-    // $('.owlClients').owlCarousel({
-    //     margin: 20,
-    //     autoplay: true,
-    //     loop: true,
-    //     nav: true,
-    //     dots: false,
-    //     center : false ,
-    //     autoplaySpeed : 5000,
-    //     autoplayTimeout : 5000,
-    //     smartSpeed: 5000 ,
-    //     navText: ["<i class='icofont-thin-right'></i>", "<i class='icofont-thin-left'></i>"],
-    //     responsive: {
-    //         0: {
-    //             items: 1
-    //         },
-    //         600: {
-    //             items: 3
-    //         },
-    //         1000: {
-    //             items: 4
-    //         }
-    //     }
-    // });
+            // Replace content
+            $sentence.html(newContent);
+        });
+    }
+    setUpCharacters();
 
 
-    // // Upload File 
-    // $('.uploadFile').on('change', function(e) {
-    //     let fileName = e.target.value.split( '\\' ).pop();
-    //     console.log(fileName);
-    //     let files = $(this).parent('.uploadBox').prev('.uploadedFiles');
-    //     files.append(
-    //         '<div class="file">' +
-    //             '<h3 class="fileName">' + fileName  + '</h3>' +
-    //             '<span class="deleteFile"> <i class="icofont-ui-delete"></i> </span>' +
-    //         '</div>'
-    //     );               
-    // });
+    // Start Animation 
+    AOS.init();
 
-    // // Delete File
-    // $(document).on('click','.deleteFile' , function(){
-    //     $(this).parent('.file').remove();
-    // });
-
-    // iniat WOW Js
-    new WOW().init();
-   
 })(jQuery);
 
