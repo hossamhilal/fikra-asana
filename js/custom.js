@@ -10,7 +10,7 @@
     //     }); 
     // });
 
-    // INPUT FOCUS ANIMATION 
+    // Input Animation
     $('.fieldInput').focus(function () {
         $(this).parent('.field').addClass('focused');
     });
@@ -43,7 +43,7 @@
                 // If we have a character, wrap it
                 if (substring != " ") {
                     newContent += '<span style="animation-delay:'+x+'s">' + substring + '</span>';
-                    x = x + 0.05;
+                    x = x + 0.1;
                 } else {
                     newContent += substring;
                 }
@@ -55,6 +55,12 @@
     }
     setUpCharacters();
 
+
+    let wheight = $(document).height() / 2 - 500;
+    $(window).scroll(function(){
+        if ($(window).scrollTop() > wheight) $('.scrollTop').addClass('show');
+        else $('.scrollTop').removeClass('show');
+    });
 
     // Start Animation 
     AOS.init();
