@@ -222,7 +222,7 @@ header {
 @keyframes revolveDrop {
     30% {
         /* transform: translate(0, -50px) rotate(180deg) scale(1); */
-        transform: translate3d(0px, 50px, 0px)rotate(0deg) scale(1);
+        transform: translate3d(0px, -50px, 0px)rotate(0deg) scale(1);
     }
 
     60% {
