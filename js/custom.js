@@ -63,6 +63,11 @@
         else $('.scrollTop').removeClass('show');
     });
 
+    $('.scrollTop').click(function() {
+        $("html, body").animate({ scrollTop: 0 }, 4000);
+        return false;
+    });
+
 
     // Side Dots
     $('.sideMenu a').on('click', function(e) {
