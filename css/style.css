@@ -207,8 +207,9 @@ header {
 .headerData h1 span {
     display: inline-block;
     opacity: 0;
-    transform: translate(0, -100px) rotate(360deg) scale(0);
-    animation: revolveDrop .3s forwards;
+    /* transform: translate(0, -100px) rotate(360deg) scale(0);
+    animation: revolveDrop .3s forwards; */
+    animation: bounceUp 600ms ease 0ms 1 normal both;
 }
 
 @keyframes revolveDrop {
@@ -225,6 +226,25 @@ header {
         opacity: 1;
     }
 }
+
+@keyframes bounceUp {
+    0% {
+      transform: translate3d(0px, 0px, 0px);
+      opacity: 0;
+    }
+    50% {
+      transform: translate3d(0px, -50px, 0px);
+      opacity: 0.1;
+    }
+    80% {
+      transform: translate3d(0px, 20px, 0px);
+      opacity: 1;
+    }
+    100% {
+      transform: translate3d(0px, 0px, 0px);
+      opacity: 1;
+    }
+  }
 
 @media screen and (max-width:768px) {
     header {
