@@ -210,8 +210,10 @@ header {
     /* transform: translate(0, -100px) rotate(360deg) scale(0);
     animation: revolveDrop .3s forwards; */
     /* animation: bounceUp 600ms ease 0ms 1 normal both; */
-    transform: translate(-150px, -50px) rotate(-180deg) scale(3);
-    animation: revolveScale .4s forwards;
+    /* transform: translate(-150px, -50px) rotate(-180deg) scale(3);
+    animation: revolveScale .4s forwards; */
+    transform: translate(-150px, 0) scale(.3);
+	animation: leftRight 1s forwards;
 }
 
 @keyframes revolveDrop {
@@ -259,6 +261,28 @@ header {
 
 	100% {
 		transform: translate(0) rotate(0) scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes leftRight {
+	40% {
+		transform: translate(50px, 0) scale(.7);
+		opacity: 1;
+		color: var(--mainColor);
+	}
+
+	60% {
+		color: var(--white);
+	}
+
+	80% {
+		transform: translate(0) scale(2);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translate(0) scale(1);
 		opacity: 1;
 	}
 }
