@@ -209,7 +209,8 @@ header {
     opacity: 0;
     transform: translate3d(0px, 0px, 0px) rotate(360deg) scale(0);
     /* transform: matrix(1, 0, 0, 1, 0, 0)  rotate(360deg) scale(0); */
-    animation: revolveDrop 1s forwards;
+    animation: revolveDrop 2s forwards;
+    transform: skew(10deg, 51deg);
     /* animation: bounceUp 600ms ease 0ms 1 normal both; */
     /* transform: translate(-150px, -50px) rotate(-180deg) scale(3);
     animation: revolveScale .4s forwards; */
@@ -222,7 +223,7 @@ header {
 @keyframes revolveDrop {
     30% {
         /* transform: translate(0, -50px) rotate(180deg) scale(1); */
-        transform: translate3d(0px, -50px, 0px)rotate(0deg) scale(1);
+        transform: translate3d(0px, -20px, 0px)rotate(0deg) scale(1);
     }
 
     60% {
@@ -1119,5 +1120,11 @@ footer .social a {
 @media (min-width: 1400px) {
     .container {
         max-width: 1300px;
+    }
+}
+
+@media (min-width: 2000px) {
+    .container {
+        max-width: 1900px;
     }
 }
