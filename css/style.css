@@ -207,21 +207,22 @@ header {
 .headerData h1 span {
     display: inline-block;
     opacity: 0;
-    /* transform: translate(0, -100px) rotate(360deg) scale(0); */
-    /* transform: translate3d(0px, 0px, 0px) scale(0);
-    animation: revolveDrop .5s forwards; */
+    transform: translate3d(0px, 0px, 0px) rotate(360deg) scale(0);
+    /* transform: matrix(1, 0, 0, 1, 0, 0)  rotate(360deg) scale(0); */
+    animation: revolveDrop 1s forwards;
     /* animation: bounceUp 600ms ease 0ms 1 normal both; */
     /* transform: translate(-150px, -50px) rotate(-180deg) scale(3);
     animation: revolveScale .4s forwards; */
     /* transform: translate(-150px, 0) scale(.3); */
     /* animation: leftRight 1s forwards; */
-    transform: rotate(-180deg) translate(150px, 0);
-	animation: twister .5s forwards;
+    /* transform: rotate(-180deg) translate(150px, 0);
+	animation: twister .5s forwards; */
 }
 
 @keyframes revolveDrop {
     30% {
-        transform: translate(0, -50px) rotate(180deg) scale(1);
+        /* transform: translate(0, -50px) rotate(180deg) scale(1); */
+        transform: translate3d(0px, 50px, 0px)rotate(0deg) scale(1);
     }
 
     60% {
@@ -230,11 +231,12 @@ header {
 
     100% {
         transform: translate(0) scale(1) rotate(0deg);
+        transform: translate3d(0px, 0px, 0px);
         opacity: 1;
     }
 }
 
-@keyframes twister {
+/* @keyframes twister {
 	10% {
 		opacity: 1;
 	}
@@ -242,7 +244,7 @@ header {
 		transform: rotate(0deg) translate(0);
 		opacity: 1;
 	}
-}
+} */
 
 /* @keyframes bounceUp {
     0% {
