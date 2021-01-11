@@ -192,6 +192,26 @@ header {
 .headerData p {
     font-size: 20px;
     opacity: .5;
+    
+}
+
+.headerData h3 ,
+.headerData p {
+    transform: translateY(50px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease-in-out;
+}
+
+.headerData h3.show ,
+.headerData p.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.headerData p.show {
+    opacity: .5;
 }
 
 .vectors {

@@ -55,6 +55,12 @@
     }
     setUpCharacters();
 
+    setTimeout(function(){
+        $('.headerData h3').addClass('show');
+        setTimeout(function() {
+            $('.headerData p').addClass('show');
+        }, 1000);
+    }, 7000);
 
     // Scroll To Top
     let wheight = $(document).height() / 2 - 500;
