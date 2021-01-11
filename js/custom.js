@@ -43,7 +43,7 @@
                 // If we have a character, wrap it
                 if (substring != " ") {
                     newContent += '<span style="animation-delay:'+x+'s">' + substring + '</span>';
-                    x = x + 0.19;
+                    x = x + 0.2;
                 } else {
                     newContent += substring;
                 }
